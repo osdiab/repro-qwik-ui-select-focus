@@ -10,13 +10,13 @@ importers:
     devDependencies:
       '@builder.io/qwik':
         specifier: ^1.5.7
-        version: 1.5.7(@types/node@20.14.8)(undici@6.19.2)
+        version: 1.5.7(@types/node@20.14.8)(undici@6.24.0)
       '@builder.io/qwik-city':
         specifier: ^1.5.7
-        version: 1.5.7(@types/node@20.14.8)
+        version: 1.5.7(@types/node@20.14.8)(rollup@4.18.0)
       '@qwik-ui/headless':
         specifier: ^0.4.4
-        version: 0.4.4(@builder.io/qwik@1.5.7)
+        version: 0.4.4(@builder.io/qwik@1.5.7(@types/node@20.14.8)(undici@6.24.0))
       '@types/eslint':
         specifier: ^8.56.10
         version: 8.56.10
@@ -25,7 +25,7 @@ importers:
         version: 20.14.8
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.7.1
-        version: 7.14.1(@typescript-eslint/parser@7.14.1)(eslint@8.57.0)(typescript@5.4.5)
+        version: 7.14.1(@typescript-eslint/parser@7.14.1(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/parser':
         specifier: ^7.7.1
         version: 7.14.1(eslint@8.57.0)(typescript@5.4.5)
@@ -43,13 +43,13 @@ importers:
         version: 5.4.5
       undici:
         specifier: '*'
-        version: 6.19.2
+        version: 6.24.0
       vite:
         specifier: ^5.2.10
         version: 5.3.1(@types/node@20.14.8)
       vite-tsconfig-paths:
         specifier: ^4.2.1
-        version: 4.3.2(typescript@5.4.5)(vite@5.3.1)
+        version: 4.3.2(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.8))
 
 packages:
 
@@ -853,6 +853,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -976,7 +977,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   globals@13.24.0:
     resolution: {integrity: sha512-AhO5QUcj8llrbG09iWhPU2B204J1xnPeL8kQmVorSsy+Sjj1sk8gIyh6cUocGmH4L0UuhAJy+hJMRA4mgA4mFQ==}
@@ -1636,8 +1637,8 @@ packages:
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
-  undici@6.19.2:
-    resolution: {integrity: sha512-JfjKqIauur3Q6biAtHJ564e3bWa8VvT+7cSiOJHFbX4Erv6CLGDpg8z+Fmg/1OI/47RA+GI2QZaF48SSaLvyBA==}
+  undici@6.24.0:
+    resolution: {integrity: sha512-lVLNosgqo5EkGqh5XUDhGfsMSoO8K0BAN0TyJLvwNRSl4xWGZlCVYsAIpa/OpA3TvmnM01GWcoKmc3ZWo5wKKA==}
     engines: {node: '>=18.17'}
 
   unified@11.0.5:
@@ -1744,16 +1745,16 @@ packages:
 
 snapshots:
 
-  '@builder.io/qwik-city@1.5.7(@types/node@20.14.8)':
+  '@builder.io/qwik-city@1.5.7(@types/node@20.14.8)(rollup@4.18.0)':
     dependencies:
       '@mdx-js/mdx': 3.0.1
       '@types/mdx': 2.0.13
       source-map: 0.7.4
       svgo: 3.3.2
-      undici: 6.19.2
+      undici: 6.24.0
       vfile: 6.0.1
       vite: 5.3.1(@types/node@20.14.8)
-      vite-imagetools: 6.2.9
+      vite-imagetools: 6.2.9(rollup@4.18.0)
       zod: 3.23.8
     transitivePeerDependencies:
       - '@types/node'
@@ -1766,10 +1767,10 @@ snapshots:
       - supports-color
       - terser
 
-  '@builder.io/qwik@1.5.7(@types/node@20.14.8)(undici@6.19.2)':
+  '@builder.io/qwik@1.5.7(@types/node@20.14.8)(undici@6.24.0)':
     dependencies:
       csstype: 3.1.3
-      undici: 6.19.2
+      undici: 6.24.0
       vite: 5.3.1(@types/node@20.14.8)
     transitivePeerDependencies:
       - '@types/node'
@@ -2017,20 +2018,22 @@ snapshots:
 
   '@oddbird/popover-polyfill@0.4.3': {}
 
-  '@qwik-ui/headless@0.4.4(@builder.io/qwik@1.5.7)':
+  '@qwik-ui/headless@0.4.4(@builder.io/qwik@1.5.7(@types/node@20.14.8)(undici@6.24.0))':
     dependencies:
-      '@builder.io/qwik': 1.5.7(@types/node@20.14.8)(undici@6.19.2)
+      '@builder.io/qwik': 1.5.7(@types/node@20.14.8)(undici@6.24.0)
       '@floating-ui/core': 1.6.2
       '@floating-ui/dom': 1.6.5
       '@oddbird/popover-polyfill': 0.4.3
       body-scroll-lock-upgrade: 1.1.0
       focus-trap: 7.5.4
 
-  '@rollup/pluginutils@5.1.0':
+  '@rollup/pluginutils@5.1.0(rollup@4.18.0)':
     dependencies:
       '@types/estree': 1.0.5
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    optionalDependencies:
+      rollup: 4.18.0
 
   '@rollup/rollup-android-arm-eabi@4.18.0':
     optional: true
@@ -2123,7 +2126,7 @@ snapshots:
 
   '@types/unist@3.0.2': {}
 
-  '@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.14.1)(eslint@8.57.0)(typescript@5.4.5)':
+  '@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.14.1(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)':
     dependencies:
       '@eslint-community/regexpp': 4.10.1
       '@typescript-eslint/parser': 7.14.1(eslint@8.57.0)(typescript@5.4.5)
@@ -2136,6 +2139,7 @@ snapshots:
       ignore: 5.3.1
       natural-compare: 1.4.0
       ts-api-utils: 1.3.0(typescript@5.4.5)
+    optionalDependencies:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
@@ -2148,6 +2152,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 7.14.1
       debug: 4.3.5
       eslint: 8.57.0
+    optionalDependencies:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
@@ -2164,6 +2169,7 @@ snapshots:
       debug: 4.3.5
       eslint: 8.57.0
       ts-api-utils: 1.3.0(typescript@5.4.5)
+    optionalDependencies:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
@@ -2180,6 +2186,7 @@ snapshots:
       minimatch: 9.0.4
       semver: 7.6.2
       ts-api-utils: 1.3.0(typescript@5.4.5)
+    optionalDependencies:
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
@@ -3627,7 +3634,7 @@ snapshots:
       typescript: 5.4.5
 
   tsconfck@3.1.0(typescript@5.4.5):
-    dependencies:
+    optionalDependencies:
       typescript: 5.4.5
 
   tslib@2.6.3:
@@ -3682,7 +3689,7 @@ snapshots:
 
   undici-types@5.26.5: {}
 
-  undici@6.19.2: {}
+  undici@6.24.0: {}
 
   unified@11.0.5:
     dependencies:
@@ -3741,18 +3748,19 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vite-imagetools@6.2.9:
+  vite-imagetools@6.2.9(rollup@4.18.0):
     dependencies:
-      '@rollup/pluginutils': 5.1.0
+      '@rollup/pluginutils': 5.1.0(rollup@4.18.0)
       imagetools-core: 6.0.4
     transitivePeerDependencies:
       - rollup
 
-  vite-tsconfig-paths@4.3.2(typescript@5.4.5)(vite@5.3.1):
+  vite-tsconfig-paths@4.3.2(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.8)):
     dependencies:
       debug: 4.3.5
       globrex: 0.1.2
       tsconfck: 3.1.0(typescript@5.4.5)
+    optionalDependencies:
       vite: 5.3.1(@types/node@20.14.8)
     transitivePeerDependencies:
       - supports-color
@@ -3760,11 +3768,11 @@ snapshots:
 
   vite@5.3.1(@types/node@20.14.8):
     dependencies:
-      '@types/node': 20.14.8
       esbuild: 0.21.5
       postcss: 8.4.38
       rollup: 4.18.0
     optionalDependencies:
+      '@types/node': 20.14.8
       fsevents: 2.3.3
 
   which-boxed-primitive@1.0.2:
